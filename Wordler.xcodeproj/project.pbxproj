@@ -14,6 +14,17 @@
 		973410E62A3DE4BE0019919B /* WordlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973410E52A3DE4BE0019919B /* WordlerTests.swift */; };
 		973410F02A3DE4BE0019919B /* WordlerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973410EF2A3DE4BE0019919B /* WordlerUITests.swift */; };
 		973410F22A3DE4BE0019919B /* WordlerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973410F12A3DE4BE0019919B /* WordlerUITestsLaunchTests.swift */; };
+		973411012A3DE64A0019919B /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411002A3DE64A0019919B /* CustomViews.swift */; };
+		973411032A3DE6580019919B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411022A3DE6580019919B /* ListView.swift */; };
+		973411052A3DE6650019919B /* ExtColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411042A3DE6650019919B /* ExtColor.swift */; };
+		973411072A3DF74A0019919B /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411062A3DF74A0019919B /* WordsView.swift */; };
+		973411092A3DFF3E0019919B /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411082A3DFF3E0019919B /* LinksView.swift */; };
+		9734110E2A3E08990019919B /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734110D2A3E08990019919B /* ListViewModel.swift */; };
+		973411102A3E0A2D0019919B /* AddNewWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734110F2A3E0A2D0019919B /* AddNewWordView.swift */; };
+		973411122A3E0AD70019919B /* AddNewLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411112A3E0AD70019919B /* AddNewLinkView.swift */; };
+		973411142A3E0B5D0019919B /* LinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411132A3E0B5D0019919B /* LinksViewModel.swift */; };
+		973411162A3E0D550019919B /* AddNewCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411152A3E0D550019919B /* AddNewCategoryView.swift */; };
+		973411182A3E0D960019919B /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411172A3E0D960019919B /* CategoryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +55,17 @@
 		973410EB2A3DE4BE0019919B /* WordlerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordlerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		973410EF2A3DE4BE0019919B /* WordlerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordlerUITests.swift; sourceTree = "<group>"; };
 		973410F12A3DE4BE0019919B /* WordlerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordlerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		973411002A3DE64A0019919B /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
+		973411022A3DE6580019919B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		973411042A3DE6650019919B /* ExtColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtColor.swift; sourceTree = "<group>"; };
+		973411062A3DF74A0019919B /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
+		973411082A3DFF3E0019919B /* LinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksView.swift; sourceTree = "<group>"; };
+		9734110D2A3E08990019919B /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		9734110F2A3E0A2D0019919B /* AddNewWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewWordView.swift; sourceTree = "<group>"; };
+		973411112A3E0AD70019919B /* AddNewLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewLinkView.swift; sourceTree = "<group>"; };
+		973411132A3E0B5D0019919B /* LinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewModel.swift; sourceTree = "<group>"; };
+		973411152A3E0D550019919B /* AddNewCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryView.swift; sourceTree = "<group>"; };
+		973411172A3E0D960019919B /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +116,9 @@
 		973410D32A3DE4BA0019919B /* Wordler */ = {
 			isa = PBXGroup;
 			children = (
-				973410D42A3DE4BA0019919B /* WordlerApp.swift */,
-				973410D62A3DE4BA0019919B /* ContentView.swift */,
+				973410FF2A3DE61A0019919B /* Extensions */,
+				9734110C2A3E086F0019919B /* ViewModel */,
+				973410FE2A3DE6080019919B /* Views */,
 				973410D82A3DE4BD0019919B /* Assets.xcassets */,
 				973410DA2A3DE4BD0019919B /* Preview Content */,
 			);
@@ -125,6 +148,40 @@
 				973410F12A3DE4BE0019919B /* WordlerUITestsLaunchTests.swift */,
 			);
 			path = WordlerUITests;
+			sourceTree = "<group>";
+		};
+		973410FE2A3DE6080019919B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9734110F2A3E0A2D0019919B /* AddNewWordView.swift */,
+				973411022A3DE6580019919B /* ListView.swift */,
+				973410D62A3DE4BA0019919B /* ContentView.swift */,
+				973411152A3E0D550019919B /* AddNewCategoryView.swift */,
+				973411112A3E0AD70019919B /* AddNewLinkView.swift */,
+				973411082A3DFF3E0019919B /* LinksView.swift */,
+				973411062A3DF74A0019919B /* WordsView.swift */,
+				973411002A3DE64A0019919B /* CustomViews.swift */,
+				973410D42A3DE4BA0019919B /* WordlerApp.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		973410FF2A3DE61A0019919B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				973411042A3DE6650019919B /* ExtColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9734110C2A3E086F0019919B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				973411172A3E0D960019919B /* CategoryViewModel.swift */,
+				9734110D2A3E08990019919B /* ListViewModel.swift */,
+				973411132A3E0B5D0019919B /* LinksViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +314,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				973411142A3E0B5D0019919B /* LinksViewModel.swift in Sources */,
+				973411032A3DE6580019919B /* ListView.swift in Sources */,
+				973411052A3DE6650019919B /* ExtColor.swift in Sources */,
+				973411102A3E0A2D0019919B /* AddNewWordView.swift in Sources */,
+				973411072A3DF74A0019919B /* WordsView.swift in Sources */,
+				973411012A3DE64A0019919B /* CustomViews.swift in Sources */,
+				9734110E2A3E08990019919B /* ListViewModel.swift in Sources */,
+				973411092A3DFF3E0019919B /* LinksView.swift in Sources */,
 				973410D72A3DE4BA0019919B /* ContentView.swift in Sources */,
+				973411182A3E0D960019919B /* CategoryViewModel.swift in Sources */,
 				973410D52A3DE4BA0019919B /* WordlerApp.swift in Sources */,
+				973411122A3E0AD70019919B /* AddNewLinkView.swift in Sources */,
+				973411162A3E0D550019919B /* AddNewCategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +493,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,6 +523,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
