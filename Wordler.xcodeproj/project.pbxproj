@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		973410D52A3DE4BA0019919B /* WordlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973410D42A3DE4BA0019919B /* WordlerApp.swift */; };
+		973410D72A3DE4BA0019919B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973410D62A3DE4BA0019919B /* ContentView.swift */; };
+		973410D92A3DE4BD0019919B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973410D82A3DE4BD0019919B /* Assets.xcassets */; };
+		973410DC2A3DE4BD0019919B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973410DB2A3DE4BD0019919B /* Preview Assets.xcassets */; };
+		973410E62A3DE4BE0019919B /* WordlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973410E52A3DE4BE0019919B /* WordlerTests.swift */; };
+		973410F02A3DE4BE0019919B /* WordlerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973410EF2A3DE4BE0019919B /* WordlerUITests.swift */; };
+		973410F22A3DE4BE0019919B /* WordlerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973410F12A3DE4BE0019919B /* WordlerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		973410E22A3DE4BE0019919B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 973410C92A3DE4BA0019919B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 973410D02A3DE4BA0019919B;
+			remoteInfo = Wordler;
+		};
+		973410EC2A3DE4BE0019919B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 973410C92A3DE4BA0019919B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 973410D02A3DE4BA0019919B;
+			remoteInfo = Wordler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		973410D12A3DE4BA0019919B /* Wordler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		973410D42A3DE4BA0019919B /* WordlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordlerApp.swift; sourceTree = "<group>"; };
+		973410D62A3DE4BA0019919B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		973410D82A3DE4BD0019919B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		973410DB2A3DE4BD0019919B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		973410E12A3DE4BE0019919B /* WordlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordlerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		973410E52A3DE4BE0019919B /* WordlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordlerTests.swift; sourceTree = "<group>"; };
+		973410EB2A3DE4BE0019919B /* WordlerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordlerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		973410EF2A3DE4BE0019919B /* WordlerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordlerUITests.swift; sourceTree = "<group>"; };
+		973410F12A3DE4BE0019919B /* WordlerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordlerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		973410CE2A3DE4BA0019919B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973410DE2A3DE4BE0019919B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973410E82A3DE4BE0019919B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		973410C82A3DE4BA0019919B = {
+			isa = PBXGroup;
+			children = (
+				973410D32A3DE4BA0019919B /* Wordler */,
+				973410E42A3DE4BE0019919B /* WordlerTests */,
+				973410EE2A3DE4BE0019919B /* WordlerUITests */,
+				973410D22A3DE4BA0019919B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		973410D22A3DE4BA0019919B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				973410D12A3DE4BA0019919B /* Wordler.app */,
+				973410E12A3DE4BE0019919B /* WordlerTests.xctest */,
+				973410EB2A3DE4BE0019919B /* WordlerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		973410D32A3DE4BA0019919B /* Wordler */ = {
+			isa = PBXGroup;
+			children = (
+				973410D42A3DE4BA0019919B /* WordlerApp.swift */,
+				973410D62A3DE4BA0019919B /* ContentView.swift */,
+				973410D82A3DE4BD0019919B /* Assets.xcassets */,
+				973410DA2A3DE4BD0019919B /* Preview Content */,
+			);
+			path = Wordler;
+			sourceTree = "<group>";
+		};
+		973410DA2A3DE4BD0019919B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				973410DB2A3DE4BD0019919B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		973410E42A3DE4BE0019919B /* WordlerTests */ = {
+			isa = PBXGroup;
+			children = (
+				973410E52A3DE4BE0019919B /* WordlerTests.swift */,
+			);
+			path = WordlerTests;
+			sourceTree = "<group>";
+		};
+		973410EE2A3DE4BE0019919B /* WordlerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				973410EF2A3DE4BE0019919B /* WordlerUITests.swift */,
+				973410F12A3DE4BE0019919B /* WordlerUITestsLaunchTests.swift */,
+			);
+			path = WordlerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		973410D02A3DE4BA0019919B /* Wordler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 973410F52A3DE4BE0019919B /* Build configuration list for PBXNativeTarget "Wordler" */;
+			buildPhases = (
+				973410CD2A3DE4BA0019919B /* Sources */,
+				973410CE2A3DE4BA0019919B /* Frameworks */,
+				973410CF2A3DE4BA0019919B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wordler;
+			productName = Wordler;
+			productReference = 973410D12A3DE4BA0019919B /* Wordler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		973410E02A3DE4BE0019919B /* WordlerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 973410F82A3DE4BE0019919B /* Build configuration list for PBXNativeTarget "WordlerTests" */;
+			buildPhases = (
+				973410DD2A3DE4BE0019919B /* Sources */,
+				973410DE2A3DE4BE0019919B /* Frameworks */,
+				973410DF2A3DE4BE0019919B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				973410E32A3DE4BE0019919B /* PBXTargetDependency */,
+			);
+			name = WordlerTests;
+			productName = WordlerTests;
+			productReference = 973410E12A3DE4BE0019919B /* WordlerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		973410EA2A3DE4BE0019919B /* WordlerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 973410FB2A3DE4BE0019919B /* Build configuration list for PBXNativeTarget "WordlerUITests" */;
+			buildPhases = (
+				973410E72A3DE4BE0019919B /* Sources */,
+				973410E82A3DE4BE0019919B /* Frameworks */,
+				973410E92A3DE4BE0019919B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				973410ED2A3DE4BE0019919B /* PBXTargetDependency */,
+			);
+			name = WordlerUITests;
+			productName = WordlerUITests;
+			productReference = 973410EB2A3DE4BE0019919B /* WordlerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		973410C92A3DE4BA0019919B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					973410D02A3DE4BA0019919B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					973410E02A3DE4BE0019919B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 973410D02A3DE4BA0019919B;
+					};
+					973410EA2A3DE4BE0019919B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 973410D02A3DE4BA0019919B;
+					};
+				};
+			};
+			buildConfigurationList = 973410CC2A3DE4BA0019919B /* Build configuration list for PBXProject "Wordler" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 973410C82A3DE4BA0019919B;
+			productRefGroup = 973410D22A3DE4BA0019919B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				973410D02A3DE4BA0019919B /* Wordler */,
+				973410E02A3DE4BE0019919B /* WordlerTests */,
+				973410EA2A3DE4BE0019919B /* WordlerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		973410CF2A3DE4BA0019919B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973410DC2A3DE4BD0019919B /* Preview Assets.xcassets in Resources */,
+				973410D92A3DE4BD0019919B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973410DF2A3DE4BE0019919B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973410E92A3DE4BE0019919B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		973410CD2A3DE4BA0019919B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973410D72A3DE4BA0019919B /* ContentView.swift in Sources */,
+				973410D52A3DE4BA0019919B /* WordlerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973410DD2A3DE4BE0019919B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973410E62A3DE4BE0019919B /* WordlerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973410E72A3DE4BE0019919B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973410F22A3DE4BE0019919B /* WordlerUITestsLaunchTests.swift in Sources */,
+				973410F02A3DE4BE0019919B /* WordlerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		973410E32A3DE4BE0019919B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 973410D02A3DE4BA0019919B /* Wordler */;
+			targetProxy = 973410E22A3DE4BE0019919B /* PBXContainerItemProxy */;
+		};
+		973410ED2A3DE4BE0019919B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 973410D02A3DE4BA0019919B /* Wordler */;
+			targetProxy = 973410EC2A3DE4BE0019919B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		973410F32A3DE4BE0019919B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		973410F42A3DE4BE0019919B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		973410F62A3DE4BE0019919B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wordler/Preview Content\"";
+				DEVELOPMENT_TEAM = 96D4BGJXCC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilka.Wordler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		973410F72A3DE4BE0019919B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wordler/Preview Content\"";
+				DEVELOPMENT_TEAM = 96D4BGJXCC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilka.Wordler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		973410F92A3DE4BE0019919B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96D4BGJXCC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilka.WordlerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wordler.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wordler";
+			};
+			name = Debug;
+		};
+		973410FA2A3DE4BE0019919B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96D4BGJXCC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilka.WordlerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wordler.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wordler";
+			};
+			name = Release;
+		};
+		973410FC2A3DE4BE0019919B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96D4BGJXCC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilka.WordlerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wordler;
+			};
+			name = Debug;
+		};
+		973410FD2A3DE4BE0019919B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96D4BGJXCC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilka.WordlerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wordler;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		973410CC2A3DE4BA0019919B /* Build configuration list for PBXProject "Wordler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				973410F32A3DE4BE0019919B /* Debug */,
+				973410F42A3DE4BE0019919B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		973410F52A3DE4BE0019919B /* Build configuration list for PBXNativeTarget "Wordler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				973410F62A3DE4BE0019919B /* Debug */,
+				973410F72A3DE4BE0019919B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		973410F82A3DE4BE0019919B /* Build configuration list for PBXNativeTarget "WordlerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				973410F92A3DE4BE0019919B /* Debug */,
+				973410FA2A3DE4BE0019919B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		973410FB2A3DE4BE0019919B /* Build configuration list for PBXNativeTarget "WordlerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				973410FC2A3DE4BE0019919B /* Debug */,
+				973410FD2A3DE4BE0019919B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 973410C92A3DE4BA0019919B /* Project object */;
+}
