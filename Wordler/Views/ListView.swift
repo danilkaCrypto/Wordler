@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ListView: View {
     
     @State private var searched = ""
     @EnvironmentObject var listViewModel: ListViewModel
     @EnvironmentObject var categoryViewModel: CategoryViewModel
+    
+    @ObservedResults(WordItem.self) var wordItems
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
@@ -42,9 +45,12 @@ struct ListView: View {
                     .padding(.horizontal, -15)
                     
                     VStack(spacing: 15) {
-                        WordCard()
-                        WordCard()
-                        WordCard()
+                        ForEach(wordItems, id: \.id) { item in
+                            WordCard(cardItem: item) {
+                                $wordItems.remove(item)
+                            }
+                        }
+
                     }
                     
                     
@@ -97,34 +103,113 @@ struct CategoryView: View {
 
 struct WordCard: View {
     
+    @State private var offsetX: CGFloat = 0
+    @State private var showNote = true
+    
+    var cardItem: WordItem
+    
+    var onDelete: ()->()
+    
+    
     var body: some View {
-        
-        VStack(alignment: .leading) {
-            Text("🇺🇸")
-                .font(.system(size: 31))
-                .offset(y: 5)
-            Text("Car")
-                .font(.system(size: 30, weight: .semibold))
-            Text("Машина")
-                .font(.system(size: 20, weight: .regular))
+        ZStack(alignment: .trailing) {
             
-            Divider()
+            removeIcon()
             
-            Text("Note")
-                .font(.system(size: 18, weight: .regular))
-                .foregroundColor(.black.opacity(0.6))
-            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit libero tellus, quis sagittis metus venenatis iaculis.")
-        }
-        .frame(width: .infinity)
-        .padding(.horizontal, 15)
-        .padding(.bottom, 15)
-        .padding(.top, 5)
-        .background(Color.myGray)
-        .cornerRadius(25)
-        
+            VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(cardItem.location)
+                        .font(.system(size: 31))
+                        .offset(y: 5)
+                    
+                    Text(!cardItem.wordNote.isEmpty ? "\(cardItem.mainWord)*" : cardItem.mainWord)
+                        .font(.system(size: 30, weight: .semibold))
+                    Text(cardItem.wordTranslate)
+                        .font(.system(size: 20, weight: .regular))
+                }
 
+                
+                
+                if !cardItem.wordNote.isEmpty{
+                    if showNote {
+                        Divider()
+                        VStack(alignment: .leading) {
+                            Text("Note")
+                                .font(.system(size: 18, weight: .regular))
+                                .foregroundColor(.black.opacity(0.6))
+                            Text(cardItem.wordNote)
+                        }
+                    }
+                    
+                    
+                }
+
+
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 15)
+            .padding(.bottom, 15)
+            .padding(.top, 5)
+            .background(Color.myGray)
+            .cornerRadius(25)
+            .offset(x: offsetX)
+            .gesture(DragGesture()
+                .onChanged{ value in
+                    if value.translation.width < 0 {
+                        offsetX = value.translation.width
+                    }
+                }
+                .onEnded{ value in
+                    withAnimation {
+                        
+                        if screenSize().width * 0.6 < -value.translation.width {
+                            
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            
+                            withAnimation {
+                                offsetX = -screenSize().width
+                                onDelete()
+                            }
+
+                        }
+                        else {
+                            offsetX = .zero
+                        }
+                        
+                    }
+                    
+                }
+            )
+            .onTapGesture {
+                withAnimation {
+                    showNote.toggle()
+                }
+            }
+            
+        }
+        
     }
     
+    @ViewBuilder
+    func removeIcon() -> some View {
+        Image(systemName: "xmark")
+            .resizable()
+            .frame(width: 10, height: 10)
+            .offset(x: 30)
+            .offset(x: offsetX * 0.5)
+            .scaleEffect(CGSize(width: 0.1 * -offsetX * 0.08, height: 0.1 * -offsetX * 0.08))
+    }
+    
+}
+
+extension View {
+    func screenSize() -> CGSize {
+        guard let window = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            return .zero
+        }
+        
+        return window.screen.bounds.size
+    }
 }
 
 

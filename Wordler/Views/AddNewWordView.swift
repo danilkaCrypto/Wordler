@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct AddNewWordView: View {
     
@@ -13,8 +14,10 @@ struct AddNewWordView: View {
     @State private var word = ""
     @State private var translation = ""
     @State private var note = ""
-    
+    @State private var showAlert = false
     @EnvironmentObject var listViewModel: ListViewModel
+    
+    @ObservedResults(WordItem.self) var wordItems
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
@@ -72,15 +75,33 @@ struct AddNewWordView: View {
                     .background(Color.myGray)
                     .cornerRadius(15)
                     .frame(height: UIScreen.main.bounds.height / 3)
+                    .autocorrectionDisabled()
                     
             }
             
             Spacer()
             Button {
-                listViewModel.isShowAddView.toggle()
+                
+                if word.isEmpty, word.isEmpty {
+                    showAlert.toggle()
+                } else {
+                    let newWord = WordItem()
+                    newWord.mainWord = word
+                    newWord.wordNote = note
+                    newWord.wordTranslate = translation
+                    
+                    $wordItems.append(newWord)
+                    
+                    withAnimation {
+                        listViewModel.isShowAddView.toggle()
+                    }
+                }
+                
+                
             } label: {
                 GreenButton(text: "Save")
             }
+            .alert(Text("Empty fields"), isPresented: $showAlert, actions: {})
 
             
         }
