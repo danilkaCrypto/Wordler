@@ -9,11 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var selected = 1
+    @State var selected = 3
     
     @ObservedObject var listViewModel = ListViewModel()
     @ObservedObject var linksViewModel = LinksViewModel()
     @ObservedObject var categoryViewModel = CategoryViewModel()
+    
+    init() {
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().backgroundColor = UIColor.white
+    }
     
     var body: some View {
         
@@ -61,6 +67,7 @@ struct ContentView: View {
             if listViewModel.isShowAddView {
                 AddNewWordView()
                     .environmentObject(listViewModel)
+
             }
             
             if linksViewModel.isShowAddView {
@@ -73,6 +80,15 @@ struct ContentView: View {
                     AddNewCategoryView()
                         .environmentObject(categoryViewModel)
                         .shadow(radius: 15)
+                }
+
+            }
+            
+            if linksViewModel.isShowLinkContent {
+                withAnimation {
+                    LinkShowView(url: $linksViewModel.openUrl)
+                        .environmentObject(linksViewModel)
+                        
                 }
 
             }

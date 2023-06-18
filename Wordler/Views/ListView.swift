@@ -61,12 +61,15 @@ struct ListView: View {
             }
             
             Button {
-                listViewModel.isShowAddView.toggle()
+                withAnimation {
+                    listViewModel.isShowAddView.toggle()
+                }
+                
             } label: {
                 Image(systemName: "plus")
-                    .font(.system(size: 30))
+                    .font(.system(size: 36))
                     .foregroundColor(.white)
-                    .padding(15)
+                    .padding(20)
                     .background(Color.accentColor)
                     .clipShape(Circle())
             }

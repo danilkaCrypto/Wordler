@@ -10,6 +10,10 @@ import RealmSwift
 
 struct AddNewWordView: View {
     
+    enum Field: Hashable {
+        case myField
+    }
+    
     @State private var category = ""
     @State private var word = ""
     @State private var translation = ""
@@ -18,6 +22,8 @@ struct AddNewWordView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     
     @ObservedResults(WordItem.self) var wordItems
+    
+    @FocusState private var focusedField: Field?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
@@ -38,8 +44,8 @@ struct AddNewWordView: View {
                         .frame(width: 23, height: 23)
                         .foregroundColor(.black)
                 }
-
-
+                
+                
             }
             
             HStack {
@@ -56,7 +62,7 @@ struct AddNewWordView: View {
                 .padding(.horizontal, 10)
                 .background(Color.myGray)
                 .clipShape(Capsule())
-
+                
             }
             
             VStack(spacing: 15) {
@@ -66,7 +72,6 @@ struct AddNewWordView: View {
             
             VStack(alignment: .leading, spacing: 5) {
                 Text("Note")
-                    .padding(.horizontal, 15)
                     .font(.system(size: 20))
                     .foregroundColor(.black.opacity(0.5))
                 TextEditor(text: $note)
@@ -76,46 +81,52 @@ struct AddNewWordView: View {
                     .cornerRadius(15)
                     .frame(height: UIScreen.main.bounds.height / 3)
                     .autocorrectionDisabled()
-                    
-            }
-            
-            Spacer()
-            Button {
-                
-                if word.isEmpty, word.isEmpty {
-                    showAlert.toggle()
-                } else {
-                    let newWord = WordItem()
-                    newWord.mainWord = word
-                    newWord.wordNote = note
-                    newWord.wordTranslate = translation
-                    
-                    $wordItems.append(newWord)
-                    
-                    withAnimation {
-                        listViewModel.isShowAddView.toggle()
+                    .focused($focusedField, equals: .myField)
+                    .onTapGesture {
+                        focusedField = nil
                     }
+                
+                
+                Spacer()
+                Button {
+                    
+                    if word.isEmpty, word.isEmpty {
+                        showAlert.toggle()
+                    } else {
+                        let newWord = WordItem()
+                        newWord.mainWord = word
+                        newWord.wordNote = note
+                        newWord.wordTranslate = translation
+                        
+                        $wordItems.append(newWord)
+                        
+                        withAnimation {
+                            listViewModel.isShowAddView.toggle()
+                        }
+                    }
+                    
+                    
+                } label: {
+                    GreenButton(text: "Save")
                 }
+                .alert(Text("Empty fields"), isPresented: $showAlert, actions: {})
                 
                 
-            } label: {
-                GreenButton(text: "Save")
+                
             }
-            .alert(Text("Empty fields"), isPresented: $showAlert, actions: {})
-
-            
+            .padding(.top, 5)
+            .background(Color.white)
         }
         .padding(.horizontal, 15)
-        .padding(.top, 5)
         .background(Color.white)
     }
 }
-
-struct AddNewWordView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddNewWordView()
+    
+    struct AddNewWordView_Previews: PreviewProvider {
+        static var previews: some View {
+            AddNewWordView()
+        }
     }
-}
 
 
 

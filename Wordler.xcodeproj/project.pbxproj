@@ -10,6 +10,9 @@
 		971D42CB2A3EF82F00B85B54 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 971D42CA2A3EF82F00B85B54 /* Realm */; };
 		971D42CD2A3EF82F00B85B54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 971D42CC2A3EF82F00B85B54 /* RealmSwift */; };
 		971D42D02A3EF85100B85B54 /* WordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971D42CF2A3EF85100B85B54 /* WordItem.swift */; };
+		971D42D22A3F04EB00B85B54 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971D42D12A3F04EB00B85B54 /* WebView.swift */; };
+		971D42D42A3F08F600B85B54 /* LinkShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971D42D32A3F08F600B85B54 /* LinkShowView.swift */; };
+		971D42D62A3F0EF900B85B54 /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971D42D52A3F0EF900B85B54 /* LinkModel.swift */; };
 		973410D52A3DE4BA0019919B /* WordlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973410D42A3DE4BA0019919B /* WordlerApp.swift */; };
 		973410D72A3DE4BA0019919B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973410D62A3DE4BA0019919B /* ContentView.swift */; };
 		973410D92A3DE4BD0019919B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973410D82A3DE4BD0019919B /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 
 /* Begin PBXFileReference section */
 		971D42CF2A3EF85100B85B54 /* WordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordItem.swift; sourceTree = "<group>"; };
+		971D42D12A3F04EB00B85B54 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		971D42D32A3F08F600B85B54 /* LinkShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkShowView.swift; sourceTree = "<group>"; };
+		971D42D52A3F0EF900B85B54 /* LinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
 		973410D12A3DE4BA0019919B /* Wordler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		973410D42A3DE4BA0019919B /* WordlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordlerApp.swift; sourceTree = "<group>"; };
 		973410D62A3DE4BA0019919B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				971D42CF2A3EF85100B85B54 /* WordItem.swift */,
+				971D42D52A3F0EF900B85B54 /* LinkModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +184,7 @@
 				973411062A3DF74A0019919B /* WordsView.swift */,
 				973411002A3DE64A0019919B /* CustomViews.swift */,
 				973410D42A3DE4BA0019919B /* WordlerApp.swift */,
+				971D42D32A3F08F600B85B54 /* LinkShowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				973411042A3DE6650019919B /* ExtColor.swift */,
+				971D42D12A3F04EB00B85B54 /* WebView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,7 +350,10 @@
 				971D42D02A3EF85100B85B54 /* WordItem.swift in Sources */,
 				973411052A3DE6650019919B /* ExtColor.swift in Sources */,
 				973411102A3E0A2D0019919B /* AddNewWordView.swift in Sources */,
+				971D42D62A3F0EF900B85B54 /* LinkModel.swift in Sources */,
 				973411072A3DF74A0019919B /* WordsView.swift in Sources */,
+				971D42D22A3F04EB00B85B54 /* WebView.swift in Sources */,
+				971D42D42A3F08F600B85B54 /* LinkShowView.swift in Sources */,
 				973411012A3DE64A0019919B /* CustomViews.swift in Sources */,
 				9734110E2A3E08990019919B /* ListViewModel.swift in Sources */,
 				973411092A3DFF3E0019919B /* LinksView.swift in Sources */,
