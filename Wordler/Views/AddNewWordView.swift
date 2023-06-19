@@ -22,6 +22,7 @@ struct AddNewWordView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     
     @ObservedResults(WordItem.self) var wordItems
+    @ObservedResults(CategoryItem.self) var categoryItems
     
     @FocusState private var focusedField: Field?
     
@@ -53,8 +54,12 @@ struct AddNewWordView: View {
                     .font(.system(size: 31))
                 
                 Picker(selection: $category) {
-                    ForEach(0..<5) { category in
-                        Text("Category\(category)")
+                    
+                    Text("Empty")
+                    
+                    ForEach(categoryItems, id: \.id) { category in
+                        Text(category.title)
+                            .tag(category.title)
                     }
                 } label: {
                     Text("Select category")
@@ -90,13 +95,14 @@ struct AddNewWordView: View {
                 Spacer()
                 Button {
                     
-                    if word.isEmpty, word.isEmpty {
+                    if word.isEmpty, translation.isEmpty, category.isEmpty {
                         showAlert.toggle()
                     } else {
                         let newWord = WordItem()
                         newWord.mainWord = word
                         newWord.wordNote = note
                         newWord.wordTranslate = translation
+                        newWord.category = category
                         
                         $wordItems.append(newWord)
                         
@@ -117,6 +123,7 @@ struct AddNewWordView: View {
             .padding(.top, 5)
             .background(Color.white)
         }
+        .padding(.top, 5)
         .padding(.horizontal, 15)
         .background(Color.white)
     }

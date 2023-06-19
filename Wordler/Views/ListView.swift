@@ -52,7 +52,12 @@ struct ListView: View {
                             ForEach(categoryItems, id: \.id) { category in
                                 CategoryView(text: category.title, size: category.title.count > 1 ? 18 : 28, selectedCategory: selectedCategory)
                                     .onTapGesture {
-                                        selectedCategory = category.title
+                                        withAnimation {
+                                            isFilter = true
+                                            selectedCategory = category.title
+                                            sortedType = category.title
+                                        }
+
                                     }
                             }
                             
@@ -73,7 +78,7 @@ struct ListView: View {
                     VStack(spacing: 15) {
                         if isFilter {
                             ForEach(wordItems.filter({ item in
-                                item.mainWord == sortedType
+                                item.category == sortedType
                             }), id: \.id) { item in
                                 WordCard(cardItem: item) {
                                     $wordItems.remove(item)
@@ -165,7 +170,7 @@ struct WordCard: View {
                         .font(.system(size: 31))
                         .offset(y: 5)
                     
-                    Text(!cardItem.wordNote.isEmpty ? "\(cardItem.mainWord)*" : cardItem.mainWord)
+                    Text(!cardItem.wordNote.isEmpty && !showNote ? "\(cardItem.mainWord)*" : cardItem.mainWord)
                         .font(.system(size: 30, weight: .semibold))
                     Text(cardItem.wordTranslate)
                         .font(.system(size: 20, weight: .regular))

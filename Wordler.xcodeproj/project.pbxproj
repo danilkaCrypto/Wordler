@@ -196,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				973411042A3DE6650019919B /* ExtColor.swift */,
-				971D42D12A3F04EB00B85B54 /* WebView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +203,7 @@
 		9734110C2A3E086F0019919B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				971D42D12A3F04EB00B85B54 /* WebView.swift */,
 				973411172A3E0D960019919B /* CategoryViewModel.swift */,
 				9734110D2A3E08990019919B /* ListViewModel.swift */,
 				973411132A3E0B5D0019919B /* LinksViewModel.swift */,

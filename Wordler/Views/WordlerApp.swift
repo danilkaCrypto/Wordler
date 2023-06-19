@@ -6,10 +6,20 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 @main
-struct WordlerApp: App {
+struct WordlerApp: SwiftUI.App {
+    
+    init() {
+        let config = Realm.Configuration(
+            schemaVersion: 3)
+        Realm.Configuration.defaultConfiguration = config
+        let realm = try! Realm()
+    }
+    
     var body: some Scene {
+        
         WindowGroup {
             ContentView()
         }

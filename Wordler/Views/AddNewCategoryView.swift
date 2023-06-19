@@ -10,6 +10,7 @@ import RealmSwift
 
 struct AddNewCategoryView: View {
     @State private var title = ""
+    @State private var showAlert = false
     @EnvironmentObject var categoryViewModel: CategoryViewModel
     
     @ObservedResults(CategoryItem.self) var categoryItems
@@ -52,10 +53,13 @@ struct AddNewCategoryView: View {
                         $categoryItems.append(newCategory)
                         
                         categoryViewModel.isShowAddCategory.toggle()
+                    } else {
+                        showAlert.toggle()
                     }
                 } label: {
                     TranslateButton(text: "Save")
                 }
+                .alert(Text("Empty fields"), isPresented: $showAlert, actions: {})
 
                 
             }
