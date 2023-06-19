@@ -14,13 +14,24 @@ struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     @EnvironmentObject var categoryViewModel: CategoryViewModel
     
-    @ObservedResults(WordItem.self) var wordItems
+    @ObservedResults(WordItem.self, sortDescriptor: SortDescriptor(keyPath: "mainWord", ascending: true)) var wordItems
+    
+    @State private var sortedType = ""
+    @State private var isFilter = false
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 15) {
-                    TextFieldView(text: $searched, icon: "magnifyingglass", title: "Search")
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.init(hex: 0xb6b6b6))
+                        TextField("Search", text: $searched)
+                    }
+                    .padding(10)
+                    .background(Color.myGray)
+                    .clipShape(Capsule())
+                    .searchable(text: $searched, collection: $wordItems, keyPath: \.mainWord)
                     
                     
                     
@@ -28,7 +39,20 @@ struct ListView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             CategoryView(text: "🇺🇸", size: 31)
-                            CategoryView(text: "Transport 🚘", size: 18)
+                                .onTapGesture {
+                                    withAnimation {
+                                        isFilter = false
+                                    }
+                                    
+                                    }
+                                    
+                            CategoryView(text: "Transport", size: 18)
+                                .onTapGesture {
+                                    withAnimation {
+                                        isFilter = true
+                                        sortedType = "CAR"
+                                    }
+                                }
                             
                             Button {
                                 categoryViewModel.isShowAddCategory.toggle()
@@ -45,11 +69,23 @@ struct ListView: View {
                     .padding(.horizontal, -15)
                     
                     VStack(spacing: 15) {
-                        ForEach(wordItems, id: \.id) { item in
-                            WordCard(cardItem: item) {
-                                $wordItems.remove(item)
+                        if isFilter {
+                            ForEach(wordItems.filter({ item in
+                                item.mainWord == sortedType
+                            }), id: \.id) { item in
+                                WordCard(cardItem: item) {
+                                    $wordItems.remove(item)
+                                }
+                            }
+                        } else {
+                            ForEach(wordItems, id: \.id) { item in
+                                WordCard(cardItem: item) {
+                                    $wordItems.remove(item)
+                                }
                             }
                         }
+                        
+
 
                     }
                     

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var selected = 3
+    @State var selected = 1
     
     @ObservedObject var listViewModel = ListViewModel()
     @ObservedObject var linksViewModel = LinksViewModel()
