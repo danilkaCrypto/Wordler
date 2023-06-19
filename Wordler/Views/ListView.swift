@@ -15,9 +15,11 @@ struct ListView: View {
     @EnvironmentObject var categoryViewModel: CategoryViewModel
     
     @ObservedResults(WordItem.self, sortDescriptor: SortDescriptor(keyPath: "mainWord", ascending: true)) var wordItems
+    @ObservedResults(CategoryItem.self) var categoryItems
     
     @State private var sortedType = ""
     @State private var isFilter = false
+    @State private var selectedCategory = "🇺🇸"
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
@@ -38,26 +40,26 @@ struct ListView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            CategoryView(text: "🇺🇸", size: 31)
+                            CategoryView(text: "🇺🇸", size: 31, selectedCategory: selectedCategory)
                                 .onTapGesture {
                                     withAnimation {
+                                        selectedCategory = "🇺🇸"
                                         isFilter = false
                                     }
                                     
                                     }
                                     
-                            CategoryView(text: "Transport", size: 18)
-                                .onTapGesture {
-                                    withAnimation {
-                                        isFilter = true
-                                        sortedType = "CAR"
+                            ForEach(categoryItems, id: \.id) { category in
+                                CategoryView(text: category.title, size: category.title.count > 1 ? 18 : 28, selectedCategory: selectedCategory)
+                                    .onTapGesture {
+                                        selectedCategory = category.title
                                     }
-                                }
+                            }
                             
                             Button {
                                 categoryViewModel.isShowAddCategory.toggle()
                             } label: {
-                                CategoryView(text: "+", size: 18)
+                                CategoryView(text: "+", size: 18, selectedCategory: selectedCategory)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.black)
                             }
@@ -129,13 +131,15 @@ struct CategoryView: View {
     
     var text: String
     var size: CGFloat
+    var selectedCategory: String
     
     var body: some View {
         Text(text)
             .font(.system(size: size))
             .padding(.horizontal, 15)
             .padding(.vertical, size > 18 ? 3 : 11)
-            .background(Color.myGray)
+            .background(selectedCategory == text ? Color.accentColor : Color.myGray)
+            .foregroundColor(selectedCategory == text ? .white : .black)
             .clipShape(Capsule())
     }
 }

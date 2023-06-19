@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct AddNewCategoryView: View {
     @State private var title = ""
     @EnvironmentObject var categoryViewModel: CategoryViewModel
+    
+    @ObservedResults(CategoryItem.self) var categoryItems
     
     var body: some View {
         VStack(alignment: .center, spacing: 15) {
@@ -26,6 +29,7 @@ struct AddNewCategoryView: View {
                     
                     Button {
                         categoryViewModel.isShowAddCategory.toggle()
+                        
                     } label: {
                         Image(systemName: "xmark")
                             .resizable()
@@ -42,7 +46,13 @@ struct AddNewCategoryView: View {
                 Spacer()
                 
                 Button {
-                    categoryViewModel.isShowAddCategory.toggle()
+                    if !title.isEmpty {
+                        let newCategory = CategoryItem()
+                        newCategory.title = title
+                        $categoryItems.append(newCategory)
+                        
+                        categoryViewModel.isShowAddCategory.toggle()
+                    }
                 } label: {
                     TranslateButton(text: "Save")
                 }

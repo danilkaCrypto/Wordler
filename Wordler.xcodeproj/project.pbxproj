@@ -31,6 +31,7 @@
 		973411142A3E0B5D0019919B /* LinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411132A3E0B5D0019919B /* LinksViewModel.swift */; };
 		973411162A3E0D550019919B /* AddNewCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411152A3E0D550019919B /* AddNewCategoryView.swift */; };
 		973411182A3E0D960019919B /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973411172A3E0D960019919B /* CategoryViewModel.swift */; };
+		97CE8C5E2A4053BF0099FE18 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CE8C5D2A4053BF0099FE18 /* CategoryItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		973411132A3E0B5D0019919B /* LinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewModel.swift; sourceTree = "<group>"; };
 		973411152A3E0D550019919B /* AddNewCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCategoryView.swift; sourceTree = "<group>"; };
 		973411172A3E0D960019919B /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		97CE8C5D2A4053BF0099FE18 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				971D42CF2A3EF85100B85B54 /* WordItem.swift */,
 				971D42D52A3F0EF900B85B54 /* LinkModel.swift */,
+				97CE8C5D2A4053BF0099FE18 /* CategoryItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				973411032A3DE6580019919B /* ListView.swift in Sources */,
 				971D42D02A3EF85100B85B54 /* WordItem.swift in Sources */,
 				973411052A3DE6650019919B /* ExtColor.swift in Sources */,
+				97CE8C5E2A4053BF0099FE18 /* CategoryItem.swift in Sources */,
 				973411102A3E0A2D0019919B /* AddNewWordView.swift in Sources */,
 				971D42D62A3F0EF900B85B54 /* LinkModel.swift in Sources */,
 				973411072A3DF74A0019919B /* WordsView.swift in Sources */,
