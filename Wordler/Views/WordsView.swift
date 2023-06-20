@@ -10,32 +10,51 @@ import RealmSwift
 
 struct WordsView: View {
     @ObservedResults(WordItem.self) var wordItems
+    @ObservedResults(CategoryItem.self) var categoryItems
     
-    
+    @State private var shuffledWordItems = [WordItem]()
+    @State private var index = 0
     @State private var category = ""
     @State private var showTranslation = false
     @State private var word: WordItem = WordItem()
+    @State private var isAllWords = false
+    @State private var isStart = true
+    @State private var isEmptyArray = false
     
     var body: some View {
         VStack(spacing: -5) {
             
-            Picker(selection: $category, content: {
-                ForEach(0..<5) { element in
-                    Text("Transport")
-                }
-            }, label: {
-                Text("select category")
-            })
-            .foregroundColor(.accentColor)
+            if isStart || isAllWords {
+                Picker(selection: $category, content: {
+                    
+                    Text("All")
+                        .tag("")
+                    
+                    ForEach(categoryItems, id:\.id) { category in
+                        Text(category.title)
+                            .tag(category.title)
+                    }
+                }, label: {
+                    Text("select category")
+                })
+                .foregroundColor(.accentColor)
+            } else {
+                Text("")
+            }
+            
+
             
             Spacer()
             
             VStack(alignment: .leading, spacing: -5) {
-                Text("EN")
+                Text(isAllWords || isStart ? "" : "\(shuffledWordItems.count)")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.init(hex: 0xb6b6b6))
-                Text("\(word.mainWord)")
-                    .font(.system(size: 48, weight: .bold))
+                VStack(alignment: .center) {
+                    Text("\(isStart ? "Let's go🏁" : isAllWords ? "That is all🎉" : word.mainWord)")
+                        .font(.system(size: 48, weight: .bold))
+                }
+
             }
             
             Rectangle()
@@ -45,10 +64,10 @@ struct WordsView: View {
             ZStack {
                 Text("\(word.wordTranslate)")
                     .font(.system(size: 32, weight: .light))
-                    .opacity(showTranslation ? 100 : 0)
+                    .opacity(showTranslation ? isAllWords ? 0 : 100 : 0)
                 
                 TranslateButton(text: "Translate")
-                    .opacity(showTranslation ? 0 : 100)
+                    .opacity(showTranslation ? 0 : isAllWords || isStart ? 0 : 100)
                     .onTapGesture {
                         withAnimation {
                             showTranslation = true
@@ -61,34 +80,92 @@ struct WordsView: View {
             Spacer()
             
             Button {
-                withAnimation {
-                    getRandom()
-                    showTranslation = false
+                
+                if isStart {
+                    if wordItems.filter({ word in
+                        word.category == category
+                    }).count != 0 {
+                        isStart = false
+                        if category != "" {
+                            shuffledWordItems = wordItems.filter({ word in
+                                word.category == category
+                            }).shuffled()
+                            word = shuffledWordItems[index]
+                        } else {
+                            shuffledWordItems = wordItems.shuffled()
+                            word = shuffledWordItems[index]
+                        }
+                    } else {
+                        isEmptyArray = true
+                    }
+                    
+                    
+
+                } else {
+                    if !isAllWords {
+                        withAnimation {
+                            next()
+                            showTranslation = false
+                        }
+                    } else {
+                        if wordItems.filter({ word in
+                            word.category == category
+                        }).count != 0 {
+                            if category != "All" || category != "" {
+                                index = 0
+                                isAllWords = false
+                                shuffledWordItems = wordItems.filter({ word in
+                                    word.category == category
+                                }).shuffled()
+                                word = shuffledWordItems[index]
+                            } else {
+                                withAnimation {
+                                    index = 0
+                                    isAllWords = false
+                                    shuffledWordItems = wordItems.shuffled()
+                                    word = shuffledWordItems[index]
+                                }
+                                
+                            }
+                        } else {
+                            isEmptyArray = true
+                        }
+                    }
                 }
+                
+
+
             } label: {
                 HStack(spacing: 0) {
                     
-                    Text("Next")
+                    Text( isStart ? "Start" : isAllWords ? "Restart" : "Next")
                         .font(.system(size: 20))
-                    Image(systemName: "chevron.right")
+                    Image(systemName: isAllWords ? "arrow.counterclockwise" : "chevron.right")
                 }
             }
+            .alert(Text("Category is empty"), isPresented: $isEmptyArray, actions: {})
             
             Rectangle()
                 .opacity(0)
                 .frame(height: 15)
-        }.onAppear {
-            getRandom()
+        }
+        .onAppear {
+            isEmptyArray = false
+            isStart = true
         }
         
         
         
     }
     
-    func getRandom() {
-        let random = Int.random(in: 0..<wordItems.count)
+    func next() {
+        if index < shuffledWordItems.count-1 {
+            index+=1
+            word = shuffledWordItems[index]
+        } else {
+            isAllWords = true
+        }
         
-        word = wordItems[random]
     }
     
 }
