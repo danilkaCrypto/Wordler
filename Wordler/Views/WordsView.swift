@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct WordsView: View {
+    @ObservedResults(WordItem.self) var wordItems
+    
     
     @State private var category = ""
-    
     @State private var showTranslation = false
+    @State private var word: WordItem = WordItem()
     
     var body: some View {
         VStack(spacing: -5) {
@@ -31,7 +34,7 @@ struct WordsView: View {
                 Text("EN")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.init(hex: 0xb6b6b6))
-                Text("Car")
+                Text("\(word.mainWord)")
                     .font(.system(size: 48, weight: .bold))
             }
             
@@ -40,7 +43,7 @@ struct WordsView: View {
                 .frame(height: 15)
             
             ZStack {
-                Text("Машина")
+                Text("\(word.wordTranslate)")
                     .font(.system(size: 32, weight: .light))
                     .opacity(showTranslation ? 100 : 0)
                 
@@ -57,21 +60,37 @@ struct WordsView: View {
             
             Spacer()
             
-            HStack(spacing: 0) {
-                Text("Next")
-                    .font(.system(size: 20))
-                Image(systemName: "chevron.right")
+            Button {
+                withAnimation {
+                    getRandom()
+                    showTranslation = false
+                }
+            } label: {
+                HStack(spacing: 0) {
+                    
+                    Text("Next")
+                        .font(.system(size: 20))
+                    Image(systemName: "chevron.right")
+                }
             }
-            .foregroundColor(.accentColor)
             
             Rectangle()
                 .opacity(0)
                 .frame(height: 15)
+        }.onAppear {
+            getRandom()
         }
         
         
         
     }
+    
+    func getRandom() {
+        let random = Int.random(in: 0..<wordItems.count)
+        
+        word = wordItems[random]
+    }
+    
 }
 
 struct WordsView_Previews: PreviewProvider {
